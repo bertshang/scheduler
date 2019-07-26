@@ -4,7 +4,7 @@ namespace Bertshang\Scheduler;
 
 use Carbon\Carbon;
 use Cron\CronExpression;
-use Studio\Totem\Traits\HasFrequencies;
+use Bertshang\Scheduler\Traits\HasFrequencies;
 use Illuminate\Notifications\Notifiable;
 
 class Task extends TotemModel
