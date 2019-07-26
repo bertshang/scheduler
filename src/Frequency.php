@@ -1,6 +1,6 @@
 <?php
 
-namespace Studio\Totem;
+namespace Bertshang\Scheduler;
 
 use Bertshang\Scheduler\Traits\HasParameters;
 
