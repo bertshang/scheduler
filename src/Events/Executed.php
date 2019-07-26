@@ -2,8 +2,7 @@
 
 namespace Bertshang\Scheduler\Events;
 
-use Studio\Totem\Task;
-use Studio\Totem\Notifications\TaskCompleted;
+use Bertshang\Scheduler\Task;
 
 class Executed extends Event
 {
