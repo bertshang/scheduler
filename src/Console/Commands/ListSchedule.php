@@ -1,6 +1,6 @@
 <?php
 
-namespace Bertshang\Scheduler\Commands;
+namespace Bertshang\Scheduler\Console\Commands;
 
 use Carbon\Carbon;
 use Cron\CronExpression;
