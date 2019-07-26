@@ -1,6 +1,6 @@
 <?php
 
-namespace Studio\Totem\Providers;
+namespace Bertshang\Scheduler\Providers;
 
 use Bertshang\Scheduler\Events\Executed;
 use Bertshang\Scheduler\Events\Executing;
