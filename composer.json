@@ -19,7 +19,8 @@
 
     "autoload": {
         "psr-4": {
-            "Bertshang\\Scheduler\\": "src"
+            "Bertshang\\Scheduler\\": "src",
+            "Bertshang\\Scheduler\\Tests\\": "tests/"
         }
     },
 
@@ -29,5 +30,8 @@
                 "Bertshang\\Scheduler\\Providers\\SchedulerServiceProvider"
             ]
         }
+    },
+    "config": {
+        "sort-packages": true
     }
 }
