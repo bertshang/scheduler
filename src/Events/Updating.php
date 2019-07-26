@@ -1,8 +1,8 @@
 <?php
 
-namespace Studio\Totem\Events;
+namespace Bertshang\Scheduler\Events;
 
-use Studio\Totem\Task;
+use Bertshang\Scheduler\Task;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\PrivateChannel;
 

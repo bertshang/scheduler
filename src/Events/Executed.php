@@ -1,9 +1,9 @@
 <?php
 
-namespace Studio\Totem\Events;
+namespace Bertshang\Scheduler\Events;
 
-use Studio\Totem\Task;
-use Studio\Totem\Notifications\TaskCompleted;
+use Bertshang\Scheduler\Task;
+use Bertshang\Scheduler\Notifications\TaskCompleted;
 
 class Executed extends Event
 {

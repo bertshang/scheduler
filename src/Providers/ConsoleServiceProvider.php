@@ -1,9 +1,9 @@
 <?php
 
-namespace Studio\Totem\Providers;
+namespace Bertshang\Scheduler\Providers;
 
-use Studio\Totem\Events\Executed;
-use Studio\Totem\Events\Executing;
+use Bertshang\Scheduler\Events\Executed;
+use Bertshang\Scheduler\Events\Executing;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Console\Scheduling\Schedule;
 

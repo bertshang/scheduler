@@ -1,12 +1,12 @@
 <?php
 
-namespace Studio\Totem\Http\Controllers;
+namespace Bertshang\Scheduler\Http\Controllers;
 
-use Studio\Totem\Task;
-use Studio\Totem\Totem;
-use Studio\Totem\Frequency;
-use Studio\Totem\Contracts\TaskInterface;
-use Studio\Totem\Http\Requests\TaskRequest;
+use Bertshang\Scheduler\Task;
+use Bertshang\Scheduler\Totem;
+use Bertshang\Scheduler\Frequency;
+use Bertshang\Scheduler\Contracts\TaskInterface;
+use Bertshang\Scheduler\Http\Requests\TaskRequest;
 
 class TasksController extends Controller
 {

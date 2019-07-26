@@ -1,6 +1,6 @@
 <?php
 
-namespace Studio\Totem\Console\Commands;
+namespace Bertshang\Scheduler\Console\Commands;
 
 use Carbon\Carbon;
 use Cron\CronExpression;

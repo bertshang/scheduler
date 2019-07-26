@@ -1,8 +1,8 @@
 <?php
 
-namespace Studio\Totem\Providers;
+namespace Bertshang\Scheduler\Providers;
 
-use Studio\Totem\Task;
+use Bertshang\Scheduler\Task;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider;
 
@@ -15,7 +15,7 @@ class TotemRouteServiceProvider extends RouteServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'Studio\Totem\Http\Controllers';
+    protected $namespace = 'Bertshang\Scheduler\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.

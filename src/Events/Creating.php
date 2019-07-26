@@ -1,6 +1,6 @@
 <?php
 
-namespace Studio\Totem\Events;
+namespace Bertshang\Scheduler\Events;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;

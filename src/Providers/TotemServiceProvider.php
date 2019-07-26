@@ -1,16 +1,16 @@
 <?php
 
-namespace Studio\Totem\Providers;
+namespace Bertshang\Scheduler\Providers;
 
 use Cron\CronExpression;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
-use Studio\Totem\Contracts\TaskInterface;
-use Studio\Totem\Console\Commands\ListSchedule;
-use Studio\Totem\Console\Commands\PublishAssets;
-use Studio\Totem\Repositories\EloquentTaskRepository;
+use Bertshang\Scheduler\Contracts\TaskInterface;
+use Bertshang\Scheduler\Console\Commands\ListSchedule;
+use Bertshang\Scheduler\Console\Commands\PublishAssets;
+use Bertshang\Scheduler\Repositories\EloquentTaskRepository;
 
 class TotemServiceProvider extends ServiceProvider
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Studio\Totem;
+namespace Bertshang\Scheduler;
 
 class Parameter extends TotemModel
 {

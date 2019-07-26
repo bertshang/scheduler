@@ -1,9 +1,9 @@
 <?php
 
-namespace Studio\Totem\Http\Controllers;
+namespace Bertshang\Scheduler\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Studio\Totem\Contracts\TaskInterface;
+use Bertshang\Scheduler\Contracts\TaskInterface;
 
 class ActiveTasksController extends Controller
 {

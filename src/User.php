@@ -1,6 +1,6 @@
 <?php
 
-namespace Studio\Totem;
+namespace Bertshang\Scheduler;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;

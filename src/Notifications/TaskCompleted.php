@@ -1,6 +1,6 @@
 <?php
 
-namespace Studio\Totem\Notifications;
+namespace Bertshang\Scheduler\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;

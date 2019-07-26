@@ -1,8 +1,8 @@
 <?php
 
-namespace Studio\Totem\Http\Controllers;
+namespace Bertshang\Scheduler\Http\Controllers;
 
-use Studio\Totem\Contracts\TaskInterface;
+use Bertshang\Scheduler\Contracts\TaskInterface;
 
 class ExecuteTasksController extends Controller
 {

@@ -1,19 +1,19 @@
 <?php
 
-namespace Studio\Totem\Repositories;
+namespace Bertshang\Scheduler\Repositories;
 
-use Studio\Totem\Task;
-use Studio\Totem\Events\Created;
-use Studio\Totem\Events\Deleted;
-use Studio\Totem\Events\Updated;
-use Studio\Totem\Events\Creating;
-use Studio\Totem\Events\Executed;
-use Studio\Totem\Events\Updating;
-use Studio\Totem\Events\Activated;
-use Studio\Totem\Events\Deactivated;
+use Bertshang\Scheduler\Task;
+use Bertshang\Scheduler\Events\Created;
+use Bertshang\Scheduler\Events\Deleted;
+use Bertshang\Scheduler\Events\Updated;
+use Bertshang\Scheduler\Events\Creating;
+use Bertshang\Scheduler\Events\Executed;
+use Bertshang\Scheduler\Events\Updating;
+use Bertshang\Scheduler\Events\Activated;
+use Bertshang\Scheduler\Events\Deactivated;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Artisan;
-use Studio\Totem\Contracts\TaskInterface;
+use Bertshang\Scheduler\Contracts\TaskInterface;
 
 class EloquentTaskRepository implements TaskInterface
 {

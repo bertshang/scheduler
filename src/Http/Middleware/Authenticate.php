@@ -1,8 +1,8 @@
 <?php
 
-namespace Studio\Totem\Http\Middleware;
+namespace Bertshang\Scheduler\Http\Middleware;
 
-use Studio\Totem\Totem;
+use Bertshang\Scheduler\Totem;
 
 class Authenticate
 {

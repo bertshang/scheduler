@@ -1,6 +1,6 @@
 <?php
 
-namespace Studio\Totem;
+namespace Bertshang\Scheduler;
 
 use Illuminate\Database\Eloquent\Model;
 

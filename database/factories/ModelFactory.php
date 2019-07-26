@@ -12,7 +12,7 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Studio\Totem\User::class, function (Faker\Generator $faker) {
+$factory->define(Bertshang\Scheduler\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
@@ -23,17 +23,17 @@ $factory->define(Studio\Totem\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(Studio\Totem\Task::class, function (Faker\Generator $faker) {
+$factory->define(Bertshang\Scheduler\Task::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
         'description'  => $faker->sentence,
-        'command'      => 'Studio\Totem\Console\Commands\ListSchedule',
+        'command'      => 'Bertshang\Scheduler\Console\Commands\ListSchedule',
         'expression'   => '* * * * *',
     ];
 });
 
-$factory->define(Studio\Totem\Result::class, function (Faker\Generator $faker) {
+$factory->define(Bertshang\Scheduler\Result::class, function (Faker\Generator $faker) {
     return [
         'task_id'     => $faker->randomDigit,
         'ran_at'      => $faker->dateTimeBetween('-1 hour'),

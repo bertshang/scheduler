@@ -1,6 +1,6 @@
 <?php
 
-namespace Studio\Totem\Events;
+namespace Bertshang\Scheduler\Events;
 
 class Created extends Event
 {

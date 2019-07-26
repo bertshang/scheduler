@@ -1,8 +1,8 @@
 <?php
 
-namespace Studio\Totem\Traits;
+namespace Bertshang\Scheduler\Traits;
 
-use Studio\Totem\Parameter;
+use Bertshang\Scheduler\Parameter;
 
 trait HasParameters
 {

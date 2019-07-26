@@ -1,8 +1,8 @@
 <?php
 
-namespace Studio\Totem\Http\Controllers;
+namespace Bertshang\Scheduler\Http\Controllers;
 
-use Studio\Totem\Http\Middleware\Authenticate;
+use Bertshang\Scheduler\Http\Middleware\Authenticate;
 use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController

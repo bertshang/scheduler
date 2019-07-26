@@ -1,15 +1,15 @@
 <?php
 
-namespace Studio\Totem\Listeners;
+namespace Bertshang\Scheduler\Listeners;
 
-use Studio\Totem\Events\Event;
+use Bertshang\Scheduler\Events\Event;
 
 class BustCache extends Listener
 {
     /**
      * Handle the event.
      *
-     * @param  \Studio\Totem\Events\Event  $event
+     * @param  \Bertshang\Scheduler\Events\Event  $event
      */
     public function handle(Event $event)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Studio\Totem\Http\Controllers;
+namespace Bertshang\Scheduler\Http\Controllers;
 
 class DashboardController extends Controller
 {
