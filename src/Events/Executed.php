@@ -1,8 +1,9 @@
 <?php
 
-namespace Bertshang\Scheduler\Events;
+namespace Studio\Totem\Events;
 
-use Bertshang\Scheduler\Task;
+use Studio\Totem\Task;
+use Studio\Totem\Notifications\TaskCompleted;
 
 class Executed extends Event
 {
@@ -28,6 +29,8 @@ class Executed extends Event
 
             unlink(storage_path($task->getMutexName()));
 
+            $task->notify(new TaskCompleted($output));
+            $task->autoCleanup();
         }
     }
 }

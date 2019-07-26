@@ -1,10 +1,10 @@
 <?php
 
-namespace Bertshang\Scheduler;
+namespace Studio\Totem;
 
 use Carbon\Carbon;
 use Cron\CronExpression;
-use Bertshang\Scheduler\Traits\HasFrequencies;
+use Studio\Totem\Traits\HasFrequencies;
 use Illuminate\Notifications\Notifiable;
 
 class Task extends TotemModel
@@ -26,10 +26,10 @@ class Task extends TotemModel
         'dont_overlap',
         'run_in_maintenance',
         'notification_email_address',
-//        'notification_phone_number',
-//        'notification_slack_webhook',
-//        'auto_cleanup_type',
-//        'auto_cleanup_num',
+        'notification_phone_number',
+        'notification_slack_webhook',
+        'auto_cleanup_type',
+        'auto_cleanup_num',
     ];
 
     /**

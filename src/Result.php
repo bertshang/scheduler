@@ -1,6 +1,6 @@
 <?php
 
-namespace Bertshang\Scheduler;
+namespace Studio\Totem;
 
 class Result extends TotemModel
 {

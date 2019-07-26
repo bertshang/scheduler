@@ -1,8 +1,8 @@
 <?php
 
-namespace Bertshang\Scheduler;
+namespace Studio\Totem;
 
-use Bertshang\Scheduler\Traits\HasParameters;
+use Studio\Totem\Traits\HasParameters;
 
 class Frequency extends TotemModel
 {

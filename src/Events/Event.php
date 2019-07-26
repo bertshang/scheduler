@@ -1,8 +1,8 @@
 <?php
 
-namespace Bertshang\Scheduler\Events;
+namespace Studio\Totem\Events;
 
-use Bertshang\Scheduler\Task;
+use Studio\Totem\Task;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;

@@ -1,30 +1,22 @@
 <?php
 
-namespace Bertshang\Scheduler\Repositories;
+namespace Studio\Totem\Repositories;
 
-use Bertshang\Scheduler\Task;
-use Bertshang\Scheduler\Events\Created;
-use Bertshang\Scheduler\Events\Deleted;
-use Bertshang\Scheduler\Events\Updated;
-use Bertshang\Scheduler\Events\Creating;
-use Bertshang\Scheduler\Events\Executed;
-use Bertshang\Scheduler\Events\Updating;
-use Bertshang\Scheduler\Events\Activated;
-use Bertshang\Scheduler\Events\Deactivated;
+use Studio\Totem\Task;
+use Studio\Totem\Events\Created;
+use Studio\Totem\Events\Deleted;
+use Studio\Totem\Events\Updated;
+use Studio\Totem\Events\Creating;
+use Studio\Totem\Events\Executed;
+use Studio\Totem\Events\Updating;
+use Studio\Totem\Events\Activated;
+use Studio\Totem\Events\Deactivated;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Artisan;
-use Bertshang\Scheduler\Contracts\TaskInterface;
-use Illuminate\Console\Scheduling\Schedule;
-use Carbon\Carbon;
-use Cron\CronExpression;
+use Studio\Totem\Contracts\TaskInterface;
+
 class EloquentTaskRepository implements TaskInterface
 {
-
-    public function __construct(Schedule $schedule)
-    {
-        $this->schedule = $schedule;
-    }
-
     /**
      * Return task eloquent builder.
      *
@@ -151,7 +143,7 @@ class EloquentTaskRepository implements TaskInterface
     {
         $task = $this->find($input['task_id']);
 
-        $task->fill(['is_active' => 1])->save();
+        $task->fill(['is_active' => true])->save();
 
         Activated::dispatch($task);
 
@@ -168,7 +160,7 @@ class EloquentTaskRepository implements TaskInterface
     {
         $task = $this->find($id);
 
-        $task->fill(['is_active' => 0])->save();
+        $task->fill(['is_active' => false])->save();
 
         Deactivated::dispatch($task);
 
@@ -196,41 +188,5 @@ class EloquentTaskRepository implements TaskInterface
         Executed::dispatch($task, $start);
 
         return $task;
-    }
-
-    //同步定时任务数据
-    public function sysnc()
-    {
-        if (count($this->schedule->events()) > 0) {
-            $events = collect($this->schedule->events())->map(function ($event) {
-                return [
-                    'description'   => $event->description ?: 'N/A',
-                    'command'       => ltrim(strtok(str_after($event->command, "'artisan'"), ' ')),
-                    'expression'      => $event->expression,
-                    'upcoming'      => $this->upcoming($event),
-                    'timezone'      => $event->timezone ?: config('app.timezone'),
-                    'overlaps'      => $event->withoutOverlapping ? 'No' : 'Yes',
-                    'maintenance'   => $event->evenInMaintenanceMode ? 'Yes' : 'No',
-                ];
-            });
-
-            Task::create($events);
-        }
-    }
-
-    /**
-     * Get Upcoming schedule.
-     *
-     * @return bool
-     */
-    protected function upcoming($event)
-    {
-        $date = Carbon::now();
-
-        if ($event->timezone) {
-            $date->setTimezone($event->timezone);
-        }
-
-        return (CronExpression::factory($event->expression)->getNextRunDate($date->toDateTimeString()))->format('Y-m-d H:i:s');
     }
 }

@@ -25,9 +25,13 @@
     },
 
     "extra": {
+        "component": "package",
+
         "laravel": {
             "providers": [
-                "Bertshang\\Scheduler\\Providers\\SchedulerServiceProvider"
+                "Bertshang\\Scheduler\\Providers\\SchedulerServiceProvider",
+                "Bertshang\\Scheduler\\Providers\\ConsoleServiceProvider",
+                "Bertshang\\Scheduler\\Providers\\SchedulerEventServiceProvider"
             ]
         }
     },

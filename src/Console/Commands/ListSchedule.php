@@ -1,6 +1,6 @@
 <?php
 
-namespace Bertshang\Scheduler\Console\Commands;
+namespace Studio\Totem\Console\Commands;
 
 use Carbon\Carbon;
 use Cron\CronExpression;
@@ -21,7 +21,7 @@ class ListSchedule extends Command
      *
      * @var string
      */
-    protected $description = '列出所有的定时任务';
+    protected $description = 'List all scheduled tasks';
 
     /**
      * @var Schedule

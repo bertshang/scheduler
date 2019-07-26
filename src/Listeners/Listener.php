@@ -1,9 +1,9 @@
 <?php
 
-namespace Bertshang\Scheduler\Listeners;
+namespace Studio\Totem\Listeners;
 
 use Illuminate\Container\Container;
-use Bertshang\Scheduler\Contracts\TaskInterface;
+use Studio\Totem\Contracts\TaskInterface;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
 class Listener implements ShouldQueue

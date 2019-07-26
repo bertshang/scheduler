@@ -1,9 +1,9 @@
 <?php
 
-namespace Bertshang\Scheduler\Traits;
+namespace Studio\Totem\Traits;
 
 use Closure;
-use Bertshang\Scheduler\Frequency;
+use Studio\Totem\Frequency;
 use Illuminate\Console\Scheduling\ManagesFrequencies;
 
 trait HasFrequencies

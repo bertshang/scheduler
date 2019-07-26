@@ -1,6 +1,6 @@
 <?php
 
-namespace Bertshang\Scheduler;
+namespace Studio\Totem;
 
 use Closure;
 use Illuminate\Support\Facades\Artisan;

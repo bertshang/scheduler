@@ -1,6 +1,6 @@
 <?php
 
-namespace Bertshang\Scheduler\Contracts;
+namespace Studio\Totem\Contracts;
 
 interface TaskInterface
 {
@@ -14,7 +14,7 @@ interface TaskInterface
     /**
      * Returns a task by its primary key.
      *
-     * @param  int|\Bertshang\Scheduler\Task  $id
+     * @param  int|\Studio\Totem\Task  $id
      * @return \Studio\Totem\Task
      */
     public function find($id);
@@ -35,7 +35,7 @@ interface TaskInterface
      * Creates a new task with the given data.
      *
      * @param  array $input
-     * @return \Bertshang\Scheduler\Task
+     * @return \Studio\Totem\Task
      */
     public function store(array $input);
 
@@ -43,15 +43,15 @@ interface TaskInterface
      * Updates the given task with the given data.
      *
      * @param  array $input
-     * @param  \Bertshang\Scheduler\Task  $task
-     * @return \Bertshang\Scheduler\Task
+     * @param  \Studio\Totem\Task  $task
+     * @return \Studio\Totem\Task
      */
     public function update(array $input, $task);
 
     /**
      * Deletes the given task.
      *
-     * @param  int|\Bertshang\Scheduler\Task  $id
+     * @param  int|\Studio\Totem\Task  $id
      * @return bool
      */
     public function destroy($id);
@@ -59,7 +59,7 @@ interface TaskInterface
     /**
      * Executes the given task.
      *
-     * @param  int|\Bertshang\Scheduler\Task  $id
+     * @param  int|\Studio\Totem\Task  $id
      * @return bool
      */
     public function execute($id);
