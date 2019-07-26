@@ -29,9 +29,7 @@
 
         "laravel": {
             "providers": [
-                "Bertshang\\Scheduler\\Providers\\SchedulerServiceProvider",
-                "Bertshang\\Scheduler\\Providers\\ConsoleServiceProvider",
-                "Bertshang\\Scheduler\\Providers\\SchedulerEventServiceProvider"
+                "Bertshang\\Scheduler\\Providers\\TotemServiceProvider"
             ]
         }
     },
