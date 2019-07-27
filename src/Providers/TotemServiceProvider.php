@@ -42,7 +42,6 @@ class TotemServiceProvider extends ServiceProvider
 
         $this->commands([
             ListSchedule::class,
-            PublishAssets::class,
         ]);
 
         $this->app->bindIf('totem.tasks', EloquentTaskRepository::class, true);
@@ -71,9 +70,7 @@ class TotemServiceProvider extends ServiceProvider
      */
     protected function registerResources()
     {
-        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'totem');
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
-        $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', 'totem');
     }
 
     /**
@@ -83,18 +80,6 @@ class TotemServiceProvider extends ServiceProvider
      */
     public function defineAssetPublishing()
     {
-        $this->publishes([
-            TOTEM_PATH.'/public/js' => public_path('vendor/totem/js'),
-        ], 'totem-assets');
-
-        $this->publishes([
-            TOTEM_PATH.'/public/css' => public_path('vendor/totem/css'),
-        ], 'totem-assets');
-
-        $this->publishes([
-            TOTEM_PATH.'/public/img' => public_path('vendor/totem/img'),
-        ], 'totem-assets');
-
         $this->publishes([
             TOTEM_PATH.'/config' => config_path()
         ], 'totem-config');
