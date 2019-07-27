@@ -29,7 +29,7 @@ class ConsoleServiceProvider extends ServiceProvider
     public function schedule(Schedule $schedule)
     {
         $tasks = app('totem.tasks')->findAllActive();
-        dd($tasks);
+
         $tasks->each(function ($task) use ($schedule) {
             $event = $schedule->command($task->command, $task->compileParameters(true));
 
