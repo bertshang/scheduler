@@ -25,13 +25,7 @@
     },
 
     "extra": {
-        "component": "package",
-
-        "laravel": {
-            "providers": [
-                "Bertshang\\Scheduler\\Providers\\TotemServiceProvider"
-            ]
-        }
+        "component": "package"
     },
     "config": {
         "sort-packages": true

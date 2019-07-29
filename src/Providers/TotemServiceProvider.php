@@ -9,7 +9,6 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
 use Bertshang\Scheduler\Contracts\TaskInterface;
 use Bertshang\Scheduler\Console\Commands\ListSchedule;
-use Bertshang\Scheduler\Console\Commands\PublishAssets;
 use Bertshang\Scheduler\Repositories\EloquentTaskRepository;
 
 class TotemServiceProvider extends ServiceProvider
