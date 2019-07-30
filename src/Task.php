@@ -40,6 +40,8 @@ class Task extends TotemModel
     protected $appends = [
         'activated',
         'upcoming',
+        'lastresult',
+        'averageruntime',
     ];
 
     /**
@@ -115,7 +117,9 @@ class Task extends TotemModel
      */
     public function getAverageRuntimeAttribute()
     {
-        return $this->results()->avg('duration') ?? 0.00;
+        $avgruntime = $this->results()->avg('duration') ?? 0.00;
+        $avgruntime = number_format(  $avgruntime / 1000 , 2 );
+        return $avgruntime;
     }
 
     /**
@@ -169,5 +173,31 @@ class Task extends TotemModel
                     ->delete();
             }
         }
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::created(function ($task) {
+
+            app('cache')->forget('totem.task.'.$task->id);
+            app('cache')->forget('totem.tasks.all');
+            app('cache')->forget('totem.tasks.active');
+        });
+
+        static::updated(function ($task) {
+
+            app('cache')->forget('totem.task.'.$task->id);
+            app('cache')->forget('totem.tasks.all');
+            app('cache')->forget('totem.tasks.active');
+        });
+
+        static::deleted(function ($task) {
+
+            app('cache')->forget('totem.task.'.$task->id);
+            app('cache')->forget('totem.tasks.all');
+            app('cache')->forget('totem.tasks.active');
+        });
     }
 }

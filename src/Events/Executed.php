@@ -3,7 +3,6 @@
 namespace Bertshang\Scheduler\Events;
 
 use Bertshang\Scheduler\Task;
-use Bertshang\Scheduler\Notifications\TaskCompleted;
 
 class Executed extends Event
 {
@@ -18,16 +17,9 @@ class Executed extends Event
         parent::__construct($task);
 
         $time_elapsed_secs = microtime(true) - $started;
-
-        if (file_exists(storage_path($task->getMutexName()))) {
-            $output = file_get_contents(storage_path($task->getMutexName()));
-
-            $task->results()->create([
-                'duration'  => $time_elapsed_secs * 1000,
-                'result'    => $output,
-            ]);
-
-            unlink(storage_path($task->getMutexName()));
-        }
+        $task->results()->create([
+            'duration'  => $time_elapsed_secs * 1000,
+            'result'    => $output,
+        ]);
     }
 }

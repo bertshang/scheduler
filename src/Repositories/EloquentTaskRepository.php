@@ -98,10 +98,10 @@ class EloquentTaskRepository implements TaskInterface
      * @param Task $task
      * @return bool|int|Task
      */
-    public function update(array $input, $task)
+    public function update(array $input)
     {
-        $task = $this->find($task);
-
+        $task = $this->find($input['id']);
+        unset($input['id']);
         if (Updating::dispatch($input, $task) === false) {
             return false;
         }
@@ -176,17 +176,23 @@ class EloquentTaskRepository implements TaskInterface
     public function execute($id)
     {
         $task = $this->find($id);
-        $start = microtime(true);
-        try {
-            Artisan::call($task->command, $task->compileParameters());
 
-            file_put_contents(storage_path($task->getMutexName()), Artisan::output());
+        $start = microtime(true);
+
+        try {
+
+            Artisan::call($task->command, $task->compileParameters());
+            $output = Artisan::output();
+            \Log::info("command results:".$output);
+             return true;
         } catch (\Exception $e) {
-            file_put_contents(storage_path($task->getMutexName()), $e->getMessage());
+            $error = $e->getMessage();
+            \Log::info("command results error:".$error);
+
+            return false;
         }
 
         Executed::dispatch($task, $start);
 
-        return $task;
     }
 }

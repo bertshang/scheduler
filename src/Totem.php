@@ -76,8 +76,11 @@ class Totem
             });
         }
 
-        return $all_commands->sortBy(function (Command $command) {
+
+        return $all_commands =  $all_commands->sortBy(function (Command $command) {
             return $command->getDescription();
         });
+
+
     }
 }

@@ -46,7 +46,7 @@ interface TaskInterface
      * @param  \Bertshang\Scheduler\Task  $task
      * @return \Bertshang\Scheduler\Task
      */
-    public function update(array $input, $task);
+    public function update(array $input);
 
     /**
      * Deletes the given task.

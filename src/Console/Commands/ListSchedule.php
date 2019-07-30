@@ -48,8 +48,10 @@ class ListSchedule extends Command
      */
     public function handle()
     {
+
         if (count($this->schedule->events()) > 0) {
             $events = collect($this->schedule->events())->map(function ($event) {
+                
                 return [
                     'description'   => $event->description ?: 'N/A',
                     'command'       => ltrim(strtok(str_after($event->command, "'artisan'"), ' ')),
@@ -60,6 +62,8 @@ class ListSchedule extends Command
                     'maintenance'   => $event->evenInMaintenanceMode ? 'Yes' : 'No',
                 ];
             });
+
+
 
             $this->table(
                 ['Description', 'Command', 'Schedule', 'Upcoming', 'Timezone', 'Overlaps?', 'In Maintenance?'],
