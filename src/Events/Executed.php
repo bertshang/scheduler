@@ -17,6 +17,7 @@ class Executed extends Event
         parent::__construct($task);
 
         $time_elapsed_secs = microtime(true) - $started;
+        $output = 'successful executed';
         $task->results()->create([
             'duration'  => $time_elapsed_secs * 1000,
             'result'    => $output,
